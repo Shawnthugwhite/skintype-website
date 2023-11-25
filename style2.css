@@ -1,0 +1,27 @@
+body{
+    background-image: url(image/Questions.png.gif);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color:white;
+    
+}
+.main-header{
+    font-size: xx-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: orange;
+}
+.final{
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: transparent;
+    color: black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    
+    
+}
+.final:hover{
+    color: darkseagreen;
+}

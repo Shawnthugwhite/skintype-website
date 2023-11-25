@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>SkinTest2</title>
+</head>
+<body>
+    <div id="quiz-container">
+        <div class="header-container">
+            <p class="main-header">SKIN TYPE TEST</p>
+            <hr>
+        </div>
+        
+        <div class="question-container">
+            <p>1. <b> Texture of your skin?</b>
+                <br>
+                <input type="radio" name="skin" value="texture881" >Does not shine
+                <br>
+                <input type="radio" name="skin" value="texture882">is dry and sometimes slight flaking may appear
+                <br>
+                <input type="radio" name="skin" value="texture883">Shines on the nose
+                <br>
+                <input type="radio" name="skin" value="texture884">Shines all-over
+            </p>
+            <br>
+            <p>2. <b>Appearance of pores on your skin</b> 
+                <br>
+                <input type="radio" name="skin1" value="pores771">Normal
+                <br>
+                <input type="radio" name="skin1" value="pores772">bearly visible
+                <br>
+                <input type="radio" name="skin1" value="pores773">visible
+                <br>
+                <input type="radio" name="skin1" value="pores774">very opened
+            </p>
+            <br>
+            <p>3. <b> How does your skin look like?</b>
+                <br>
+                <input type="radio" name="skin2" value="skin661">cool,fresh,supple
+                <br>
+                <input type="radio" name="skin2" value="skin662">Thin and lacking moisture
+                <br>
+                <input type="radio" name="skin2" value="skin663">Shines on the "T" zone
+                <br>
+                <input type="radio" name="skin2" value="skin664">Shines and has a tendency of acne
+            </p>
+            <br>
+            <p>4. <b>How does your skin feel when touched?</b> 
+                <br>
+                <input type="radio" name="skin3" value="feel551">supple
+                <br>
+                <input type="radio" name="skin3" value="feel552">Dry or very dry
+                <br>
+                <input type="radio" name="skin3" value="feel553">Oily on the forehead and nose
+                <br>
+                <input type="radio" name="skin3" value="feel554">Oily all over
+            </p>
+            <br>
+            <p>5. <b>How often do you feel tightness around the eyes and the mouth area?</b>
+                <br>
+                <input type="radio" name="skin4" value="tight441">very often
+                <br>
+                <input type="radio" name="skin4" value="tight442">Regularly
+                <br>
+                <input type="radio" name="skin4" value="tight443">Sometimes
+                <br>
+                <input type="radio" name="skin4" value="tight444">Never
+            </p>
+            <br>
+            <p>6. <b>How often do you have pimples?</b> 
+                <br>
+                <input type="radio" name="skin5" value="pimples331">Rarely
+                <br>
+                <input type="radio" name="skin5" value="pimples332">Never
+                <br>
+                <input type="radio" name="skin5" value="pimples333">Sometimes
+                <br>
+                <input type="radio" name="skin5" value="pimples334">very often
+            </p>
+            <br>
+            <p>7. <b>Do you have facial lines and wrinkles?</b> 
+                <br>
+                <input type="radio" name="skin6" value="skin221">very few
+                <br>
+                <input type="radio" name="skin6" value="skin222">very deep
+                <br>
+                <input type="radio" name="skin6" value="skin223">Yes
+                <br>
+                <input type="radio" name="skin6" value="skin224">None
+            </p>
+            <br>
+            <p>8. <b>What happens when your skin is exposed to sun?</b>
+                <br>
+                <input type="radio" name="skin7" value="skin111">Tan
+                <br>
+                <input type="radio" name="skin7" value="skin112">Burns
+                <br>
+                <input type="radio" name="skin7" value="skin113">Shines on the nose
+                <br>
+                <input type="radio" name="skin7" value="skin114">Shines all-over
+            </p>
+            <br>
+        </div>
+
+        <div class="button-container">
+            <button class="final" onclick="calculateSkinType()">FIND SKIN TYPE</button>
+        </div>
+
+        <div class="result-container">
+            <p class="result"></p>
+        </div>
+    </div>
+
+    <script>
+        function calculateSkinType() {
+            const answers = {
+                skin: getRadioValue("skin"),
+                skin1: getRadioValue("skin1"),
+                skin2: getRadioValue("skin2"),
+                skin3: getRadioValue("skin3"),
+                skin4: getRadioValue("skin4"),
+                skin5: getRadioValue("skin5"),
+                skin6: getRadioValue("skin6"),
+                skin7: getRadioValue("skin7")
+            };
+
+            const resultElement = document.querySelector(".result");
+
+            if (allQuestionsAnswered(answers)) {
+                let skinType;
+
+                if (
+                    answers.skin === 'texture883'|| answers.skin === 'texture881'&&
+                    answers.skin1 === 'pores771'|| answers.skin1 === 'pores772'&&
+                    answers.skin2 === 'skin663' || answers.skin1 === 'skin664' &&
+                    answers.skin3 === 'feel553' &&
+                    answers.skin4 === 'tight443' &&
+                    answers.skin5 === 'pimples333' &&
+                    answers.skin6 === 'skin224' &&
+                    answers.skin7 === 'skin113'
+                ) {
+                    skinType = 'Combination Skin';
+                } else if (
+                    answers.skin === 'texture881' &&
+                    answers.skin1 === 'pores771' &&
+                    answers.skin2 === 'skin661' &&
+                    answers.skin3 === 'feel551' &&
+                    answers.skin4 === 'tight444' || answers.skin4 === 'tight443'&&
+                    answers.skin5 === 'pimples331' || answers.skin5 === 'pimples332' &&
+                    answers.skin6 === 'skin221' || answers.skin6 === 'skin224' &&
+                    answers.skin7 === 'skin111'|| answers.skin7 === 'skin112' 
+                ) {
+                    skinType = 'Normal Skin';
+                } else if (
+                    answers.skin === 'texture884' &&
+                    answers.skin1 === 'pores773' &&
+                    answers.skin2 === 'skin664' &&
+                    answers.skin3 === 'feel554' &&
+                    answers.skin4 === 'tight443' &&
+                    answers.skin5 === 'pimples333' &&
+                    answers.skin6 === 'skin224' &&
+                    answers.skin7 === 'skin112'
+                ) {
+                    skinType = 'Oily Skin';
+                } else if (
+                    answers.skin === 'texture882' &&
+                    answers.skin1 === 'pores771' &&
+                    answers.skin2 === 'skin662' &&
+                    answers.skin3 === 'feel552' &&
+                    answers.skin4 === 'tight442' &&
+                    answers.skin5 === 'pimples332' &&
+                    answers.skin6 === 'skin221' &&
+                    answers.skin7 === 'skin111 '
+                ) {
+                    skinType = 'Dry Skin';
+                } else {
+                    skinType = 'Normal skin';
+                }
+
+                resultElement.textContent = "Your skin type is " + skinType;
+            } else {
+                resultElement.textContent = "Please answer all questions.";
+            }
+        }
+
+        function getRadioValue(name) {
+            const options = document.getElementsByName(name);
+
+            for (const option of options) {
+                if (option.checked) {
+                    return option.value;
+                }
+            }
+
+            return null;
+        }
+
+        function allQuestionsAnswered(answers) {
+            for (const key in answers) {
+                if (answers[key] === null || answers[key] === undefined) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
