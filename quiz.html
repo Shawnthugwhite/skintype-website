@@ -133,14 +133,14 @@
                 let skinType;
 
                 if (
-                    answers.skin === 'texture883'|| answers.skin === 'texture884'&&
+                    (answers.skin === 'texture883'|| answers.skin === 'texture884')&&
                     answers.skin1 === 'pores771'&&
-                    answers.skin2 === 'skin663' || answers.skin2 === 'skin664' &&
+                    (answers.skin2 === 'skin663' || answers.skin2 === 'skin664')&&
                     answers.skin3 === 'feel553' &&
                     answers.skin4 === 'tight443' &&
-                    answers.skin5 === 'pimples333' || answers.skin5==='pimples334' &&
-                    answers.skin6 === 'skin224'|| answers.skin6 ==='skin221' &&
-                    answers.skin7 === 'skin113' || answers.skin7==='skin114'
+                    (answers.skin5 === 'pimples333' || answers.skin5==='pimples334') &&
+                    (answers.skin6 === 'skin224'|| answers.skin6 ==='skin221') &&
+                    (answers.skin7 === 'skin113' || answers.skin7==='skin114')
                 ) {
                     skinType = 'Combination Skin';
                 } else if (
@@ -148,10 +148,10 @@
                     answers.skin1 === 'pores771' &&
                     answers.skin2 === 'skin661' &&
                     answers.skin3 === 'feel551' &&
-                    answers.skin4 === 'tight444' || answers.skin4 === 'tight443'&&
-                    answers.skin5 === 'pimples331' || answers.skin5 === 'pimples332' &&
-                    answers.skin6 === 'skin221' || answers.skin6 === 'skin224' &&
-                    answers.skin7 === 'skin111'|| answers.skin7 === 'skin112' 
+                    (answers.skin4 === 'tight444' || answers.skin4 === 'tight443')&&
+                    (answers.skin5 === 'pimples331' || answers.skin5 === 'pimples332') &&
+                    (answers.skin6 === 'skin221' || answers.skin6 === 'skin224') &&
+                    (answers.skin7 === 'skin111'|| answers.skin7 === 'skin112') 
                 ) {
                     skinType = 'Normal Skin';
                 } else if (
@@ -162,7 +162,7 @@
                     answers.skin4 === 'tight443' &&
                     answers.skin5 === 'pimples333' &&
                     answers.skin6 === 'skin224' &&
-                    answers.skin7 === 'skin112'
+                    (answers.skin7 === 'skin113' || answers.skin7 === 'skin114')
                 ) {
                     skinType = 'Oily Skin';
                 } else if (
@@ -173,7 +173,7 @@
                     answers.skin4 === 'tight442' &&
                     answers.skin5 === 'pimples332' &&
                     answers.skin6 === 'skin221' &&
-                    answers.skin7 === 'skin111 '
+                    (answers.skin7 === 'skin111' || answers.skin7 === 'skin112')
                 ) {
                     skinType = 'Dry Skin';
                 } else {
